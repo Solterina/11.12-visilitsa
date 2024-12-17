@@ -33,6 +33,7 @@
             lblOver = new Label();
             txtTema = new Label();
             txtClue = new Label();
+            txtGame = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -80,10 +81,22 @@
             // txtClue
             // 
             txtClue.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtClue.Location = new Point(217, 9);
+            txtClue.Location = new Point(253, 9);
             txtClue.Name = "txtClue";
-            txtClue.Size = new Size(380, 29);
+            txtClue.Size = new Size(442, 29);
             txtClue.TabIndex = 4;
+            // 
+            // txtGame
+            // 
+            txtGame.Font = new Font("Verdana", 12F, FontStyle.Bold);
+            txtGame.Location = new Point(12, 9);
+            txtGame.Name = "txtGame";
+            txtGame.Size = new Size(102, 45);
+            txtGame.TabIndex = 5;
+            txtGame.TabStop = false;
+            txtGame.Text = "Как играть?";
+            txtGame.UseVisualStyleBackColor = true;
+            txtGame.Click += txtGame_Click;
             // 
             // Form1
             // 
@@ -91,13 +104,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtGame);
             Controls.Add(txtClue);
             Controls.Add(txtTema);
             Controls.Add(lblOver);
             Controls.Add(pictureBox);
             Controls.Add(lbl);
             Name = "Form1";
-            Text = "Игра виселица";
+            Text = "  ";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);
@@ -111,5 +125,6 @@
         private Label lblOver;
         private Label txtTema;
         private Label txtClue;
+        private Button txtGame;
     }
 }

@@ -8,7 +8,9 @@ namespace _11._12_Виселица
         string path = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString()).ToString() + "/imageonline/";
         string word;
         Random rnd = new Random();
-        string[] words = ["ЕДА", "КУРИЦА", "МАНГО", "ШОКОЛАД",];
+        string[][] words = [["ЕДА", "КУРИЦА", "МАНГО", "ШОКОЛАД"], ["ЩЕТКА", "НОЖ"]];
+        string[] categories = ["ЕДА", "ВЕЩИ"];
+        int categoria;
         bool gameOver;
         char[] wordd;
         int image = 0;
@@ -18,6 +20,7 @@ namespace _11._12_Виселица
         public Form1()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,7 +29,9 @@ namespace _11._12_Виселица
         }
         private void NewGame()
         {
-            word = words[rnd.Next(words.Length)];
+            categoria = rnd.Next(categories.Length);
+
+            word = words[categoria][rnd.Next(words.Length)];
             wordd = word.Select(x => '_').ToArray();
 
             gameOver = false;
@@ -36,6 +41,8 @@ namespace _11._12_Виселица
             pictureBox.Image = Image.FromFile(path + image + "0.jpg");
 
             lblOver.Text = "";
+
+            txtTema.Text = categories[categoria];
 
             lbl.Text = String.Join(" ", wordd);
 
@@ -53,7 +60,7 @@ namespace _11._12_Виселица
                 return;
             }
 
-            if (gameOver) return;
+            if (gameOver) return;            
 
             bool flag = true;
 
@@ -82,7 +89,7 @@ namespace _11._12_Виселица
 
                 pictureBox.Image = Image.FromFile(path + image + "0.jpg");
 
-                txtClue.Text = $"Попыток осталось {Math.Abs(image-5)}, осторожно";
+                txtClue.Text = $"Попыток осталось {Math.Abs(image - 5)}, осторожно";
                 txtClue.ForeColor = Color.Black;
                 txtClue.Font = new Font("Time new roman", 20, FontStyle.Regular);
 
@@ -102,6 +109,13 @@ namespace _11._12_Виселица
             lbl.Left = (this.ClientSize.Width - lbl.Width) / 2;
             lblOver.Left = (this.ClientSize.Width - lblOver.Width) / 2;
             txtClue.Left = (this.ClientSize.Width - txtClue.Width) / 2;
+        }
+
+        private void txtGame_Click(object sender, EventArgs e)
+        {
+            var pravila = new FormPr();
+            pravila.Show();
+            pictureBox.Focus();
         }
     }
 }
