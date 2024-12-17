@@ -41,6 +41,7 @@
             // 
             lbl.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lbl.AutoSize = true;
+            lbl.BackColor = Color.Transparent;
             lbl.Font = new Font("Segoe UI", 20F);
             lbl.Location = new Point(337, 378);
             lbl.Name = "lbl";
@@ -49,6 +50,7 @@
             // 
             // pictureBox
             // 
+            pictureBox.BackColor = Color.Transparent;
             pictureBox.BackgroundImageLayout = ImageLayout.None;
             pictureBox.Image = Properties.Resources._00;
             pictureBox.ImageLocation = "";
@@ -62,6 +64,7 @@
             // lblOver
             // 
             lblOver.AutoSize = true;
+            lblOver.BackColor = Color.Transparent;
             lblOver.Font = new Font("Verdana", 18F, FontStyle.Bold);
             lblOver.Location = new Point(318, 57);
             lblOver.Name = "lblOver";
@@ -71,8 +74,9 @@
             // txtTema
             // 
             txtTema.AutoSize = true;
+            txtTema.BackColor = Color.Transparent;
             txtTema.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtTema.Location = new Point(12, 386);
+            txtTema.Location = new Point(12, 380);
             txtTema.Name = "txtTema";
             txtTema.Size = new Size(148, 29);
             txtTema.TabIndex = 3;
@@ -80,14 +84,17 @@
             // 
             // txtClue
             // 
+            txtClue.AutoSize = true;
+            txtClue.BackColor = Color.Transparent;
             txtClue.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtClue.Location = new Point(253, 9);
+            txtClue.Location = new Point(253, 30);
             txtClue.Name = "txtClue";
-            txtClue.Size = new Size(442, 29);
+            txtClue.Size = new Size(0, 29);
             txtClue.TabIndex = 4;
             // 
             // txtGame
             // 
+            txtGame.BackColor = Color.Transparent;
             txtGame.Font = new Font("Verdana", 12F, FontStyle.Bold);
             txtGame.Location = new Point(12, 9);
             txtGame.Name = "txtGame";
@@ -95,7 +102,7 @@
             txtGame.TabIndex = 5;
             txtGame.TabStop = false;
             txtGame.Text = "Как играть?";
-            txtGame.UseVisualStyleBackColor = true;
+            txtGame.UseVisualStyleBackColor = false;
             txtGame.Click += txtGame_Click;
             // 
             // Form1
@@ -103,6 +110,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            BackgroundImage = Properties.Resources.paper_texture_cells_55327_1920x1080;
             ClientSize = new Size(800, 450);
             Controls.Add(txtGame);
             Controls.Add(txtClue);
@@ -111,7 +119,7 @@
             Controls.Add(pictureBox);
             Controls.Add(lbl);
             Name = "Form1";
-            Text = "  ";
+            Text = "Виселица";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox).EndInit();
             ResumeLayout(false);

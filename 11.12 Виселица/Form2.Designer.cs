@@ -34,10 +34,11 @@
             // 
             // txtGamePr
             // 
-            txtGamePr.Font = new Font("Verdana", 10F, FontStyle.Bold);
-            txtGamePr.Location = new Point(56, 89);
+            txtGamePr.BackColor = Color.Transparent;
+            txtGamePr.Font = new Font("Times New Roman", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            txtGamePr.Location = new Point(42, 59);
             txtGamePr.Name = "txtGamePr";
-            txtGamePr.Size = new Size(503, 146);
+            txtGamePr.Size = new Size(503, 100);
             txtGamePr.TabIndex = 0;
             txtGamePr.Text = resources.GetString("txtGamePr.Text");
             // 
@@ -45,7 +46,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(604, 287);
+            BackgroundImage = Properties.Resources.paper_texture_cells_55327_1920x1080;
+            ClientSize = new Size(554, 217);
             Controls.Add(txtGamePr);
             Name = "FormPr";
             Text = "Правила";
